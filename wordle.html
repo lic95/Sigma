@@ -1,0 +1,42 @@
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <main>
+        <h1>Toofy wordly link generator</h1>
+        <h2>Must be 5 letter valid word press enter to go to website</h2><br></br>
+
+
+        <input id="searchTxt" placeholder="set the wordle wordle">
+
+        <br></br><br></br>
+        <div id='searchValue'>https://wordly.org?challenge=</div>
+    </main>
+	<script>//creates a listener for when you press a key
+    window.onkeyup = keyup;
+    console.log("Hello sengla")
+
+    //creates a global Javascript variable
+    var inputTextValue;
+
+    function keyup(e) {
+        //setting your input text to the global Javascript Variable for every key press
+        inputTextValue = e.target.value;
+        document.getElementById("searchValue").innerHTML = "https://wordly.org?challenge=" + window.btoa(inputTextValue);
+        //listens for you to press the ENTER key, at which point your web address will change to the one you have input in the search box
+
+        if (e.keyCode == 13) {
+            window.location = "https://wordly.org?challenge=" + window.btoa(inputTextValue).toString();
+        }
+    }
+    </script>
+  </body>
+</html>
